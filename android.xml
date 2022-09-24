@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.minesh.navigationd">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/spark_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/spark_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Main_screen"
+            android:theme="@style/TranslucentTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:theme="@style/TranslucentTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Time_table_list"
+            android:label="Time Table"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Faculty_info_list"
+            android:label="Faculty Information"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Schedule"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".FacultyInformation"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Main_result_import"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".LabOccupancy"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Credits"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Selector"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Faculty_login"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".Result_list"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+        <activity
+            android:name=".ResetPassword"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".Splash"/>
+    </application>
+
+</manifest>
+
+  
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.minesh.navigationd"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.firebase:firebase-database:16.0.3'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.android.support:support-annotations:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.felipecsl:gifimageview:2.1.0'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.4'
+    implementation 'com.google.firebase:firebase-storage:16.0.3'
+    implementation 'com.github.codekidX:storage-chooser:2.0.3'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation files('libs/jxl-1.0.jar')
+    implementation 'com.r0adkll:slidableactivity:2.0.6'
+}
+
+apply plugin: 'com.google.gms.google-services'
